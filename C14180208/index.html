@@ -7,12 +7,10 @@
                 var date1 = document.getElementById("date1").value;
                 var date1 = new Date(date1);
 
-                today = new Date();
-                var dd = today.getDate();
-                var mm = today.getMonth()+1; //January = 0
-                var yyyy = today.getFullYear();
+                var date2 = document.getElementById("date2").value;
+                var date2 = new Date(date2);
 
-                var resultTemp = today.getTime() - date1.getTime();
+                var resultTemp = date2.getTime() - date1.getTime();
                 var result = resultTemp / (24*3600*1000);
 
                 return document.getElementById("showdate").innerHTML = result + " days";
@@ -23,8 +21,12 @@
         <p>NRP : C14180208</p>
         <p>Nama : Kevin Edlyn Chandra</p>
 
-        <label for="date1">Today date : </label>
+        <label for="date1">Date 1 : </label>
         <input type="date" id="date1">
+
+        <label for="date1">Date 2: </label>
+        <input type="date" id="date2">
+
         <button onclick="countDay()">Count Date</button>
         <h2 id ="showdate"></h2>
     </body>
