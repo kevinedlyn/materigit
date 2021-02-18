@@ -1,10 +1,31 @@
 <html>
     <title>C14180208</title>
     <head>
+        <script>
+            function countDay()
+            {
+                var date1 = document.getElementById("date1").value;
+                var date1 = new Date(date1);
 
+                today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1; //January = 0
+                var yyyy = today.getFullYear();
+
+                var resultTemp = today.getTime() - date1.getTime();
+                var result = resultTemp / (24*3600*1000);
+
+                return document.getElementById("showdate").innerHTML = result + " days";
+            }
+        </script>
     </head>
     <body>
         <p>NRP : C14180208</p>
         <p>Nama : Kevin Edlyn Chandra</p>
+
+        <label for="date1">Today date : </label>
+        <input type="date" id="date1">
+        <button onclick="countDay()">Count Date</button>
+        <h2 id ="showdate"></h2>
     </body>
 </html>
